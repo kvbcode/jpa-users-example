@@ -1,4 +1,4 @@
-create sequence users_seq start with 50;
+create sequence users_seq start with 50 increment 10;
 
 create table users(
     id bigint not null default nextval('users_seq'),
