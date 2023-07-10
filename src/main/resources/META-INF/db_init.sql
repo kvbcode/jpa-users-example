@@ -2,7 +2,7 @@ create sequence users_seq start with 50;
 
 create table users(
     id bigint not null default nextval('users_seq'),
-    name varchar(255) not null,
+    name varchar(255) not null unique,
     primary key (id)
 );
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="jpa_users_postres_tc">
+        <description>JPA user roles example. PostgreSQL Testcontainer.</description>
+        <class>com.cyber.db.entity.User</class>
+        <class>com.cyber.db.entity.Role</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <!-- Hibernate -->
+            <property name="hibernate.hbm2ddl.import_files_sql_extractor"
+                      value="org.hibernate.tool.schema.internal.script.MultiLineSqlScriptExtractor"/>
+            <!-- Debug -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.highlight_sql" value="true"/>
+            <!-- DB initialization-->
+            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+            <property name="jakarta.persistence.schema-generation.create-source" value="script"/>
+            <property name="jakarta.persistence.schema-generation.create-script-source" value="META-INF/db_init.sql"/>
+        </properties>
+    </persistence-unit>
+</persistence>

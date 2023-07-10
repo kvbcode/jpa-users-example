@@ -57,3 +57,11 @@ User{id=50, name='James M. Saunders'}
 Пользователь удален: User{id=50, name='James M. Saunders'}
 Неиспользуемая роль WEB была успешно удалена
 ```
+
+
+### Тестирование
+
+Для запуска интеграционных тестов с использованием TestContainers:
+```
+mvn failsafe:integration-test
+```
